@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="590.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TablaBusquedasController">
+   <children>
+      <SplitPane dividerPositions="0.30952380952380953" layoutX="248.0" layoutY="217.0" orientation="VERTICAL" prefHeight="483.0" prefWidth="708.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="706.0">
+               <children>
+                  <Label layoutX="35.0" layoutY="14.0" text="Criterios de búsqueda">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="52.0" text="Usuario" />
+                  <Label layoutX="241.0" layoutY="54.0" text="Fecha" />
+                  <Label layoutX="239.0" layoutY="87.0" text="Desde">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="435.0" layoutY="87.0" text="Hasta">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dtpckDesde" layoutX="286.0" layoutY="83.0" prefHeight="25.0" prefWidth="124.0" />
+                  <DatePicker fx:id="dtpckHasta" layoutX="478.0" layoutY="83.0" prefHeight="25.0" prefWidth="124.0" />
+                  <ComboBox fx:id="cmbUsuarios" layoutX="34.0" layoutY="81.0" prefHeight="25.0" prefWidth="162.0" />
+                  <Button fx:id="btnLimpiarFiltros" layoutX="500.0" layoutY="133.0" mnemonicParsing="false" onAction="#limpiarFiltros" prefHeight="25.0" prefWidth="102.0" text="Limpiar filtros" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="309.0" prefWidth="706.0">
+               <children>
+                  <TableView fx:id="tablaBusquedas" layoutX="215.0" prefHeight="403.0" prefWidth="491.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="clmFecha" prefWidth="123.0" text="Fecha" />
+                      <TableColumn fx:id="clmUsuario" minWidth="7.0" prefWidth="128.0" text="Usuario" />
+                        <TableColumn fx:id="clmTagBuscado" minWidth="0.0" prefWidth="116.0" text="Tag buscado" />
+                        <TableColumn fx:id="clmPOIsEncontrados" minWidth="0.0" prefWidth="117.0" text="POIs encontrados" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="50.0" layoutY="2.0" text="Detalle de POIs">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tablaDetallePOIs" layoutX="6.0" layoutY="40.0" prefHeight="323.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="497.0">
+                    <columns>
+                      <TableColumn fx:id="clmDetalle" prefWidth="199.0" text="Los POIs de la busqueda fueron" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
